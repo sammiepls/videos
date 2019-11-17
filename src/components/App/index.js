@@ -1,10 +1,10 @@
 import React from "react";
 
-import Search from "./Search";
-import VideoList from "./VideoList";
-import Video from "./Video";
-
-import youtube from "../apis/youtube";
+import Search from "../Search";
+import VideoList from "../VideoList";
+import Video from "../Video";
+import "./styles.scss";
+import youtube from "../../apis/youtube";
 
 class App extends React.Component {
   state = {
@@ -18,6 +18,7 @@ class App extends React.Component {
     });
     this.setState({
       videos: response.data.items,
+      video: { ...response.data.items[0].snippet, videoId: response.data.items[0].id.videoId },
     });
   };
 
@@ -27,18 +28,18 @@ class App extends React.Component {
 
   renderFeatureVideo() {
     if (!this.state.video) {
-      return <div>No video selected</div>;
+      return <div className="Video">No video selected</div>;
     }
     return <Video video={this.state.video} />;
   }
 
   render() {
     return (
-      <div>
+      <main>
         <Search handleSearchTerm={this.handleSearchTerm} />
         {this.renderFeatureVideo()}
         <VideoList videos={this.state.videos} handleVideoSelect={this.handleVideoSelect} />
-      </div>
+      </main>
     );
   }
 }

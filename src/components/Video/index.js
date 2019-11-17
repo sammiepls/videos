@@ -1,10 +1,10 @@
 import React from "react";
+import "./styles.scss";
 
 const Video = ({ video }) => {
   return (
-    <article>
+    <article class="Video">
       <h2>{video.title}</h2>
-      <p>{video.description}</p>
       <iframe
         title={video.title}
         width="560"
@@ -12,6 +12,7 @@ const Video = ({ video }) => {
         src={`https://www.youtube.com/embed/${video.videoId}`}
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       />
+      <p>{video.description}</p>
     </article>
   );
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles.scss";
 
 class Search extends React.Component {
   state = {
@@ -16,7 +17,8 @@ class Search extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.onSearchSubmit}>
+      <form className="searchbar" onSubmit={this.onSearchSubmit}>
+        <h1>Search for Video</h1>
         <input
           onChange={this.onInputChange}
           type="search"

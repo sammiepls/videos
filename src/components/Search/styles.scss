@@ -1,0 +1,16 @@
+.searchbar {
+  margin: 1rem;
+
+  h1 {
+    text-align: center;
+  }
+
+  input {
+    width: 100%;
+    max-width: 700px;
+    padding: 1rem 0.5rem;
+    margin: auto;
+    display: block;
+    box-sizing: border-box;
+  }
+}

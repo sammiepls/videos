@@ -1,0 +1,12 @@
+.video-item {
+  display: grid;
+  grid-column-gap: 0.5rem;
+  grid-template-columns: minmax(auto, 120px) 1fr;
+
+  h3 {
+    grid-area: 1/2;
+    margin: 0;
+    font-weight: 300;
+    font-size: 0.8rem;
+  }
+}
