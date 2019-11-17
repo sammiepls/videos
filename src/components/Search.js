@@ -22,7 +22,7 @@ class Search extends React.Component {
           type="search"
           name="search"
           id="search"
-          value={this.props.searchTerm}
+          value={this.state.searchTerm}
         />
       </form>
     );
